@@ -1,6 +1,6 @@
 #include <stdio.h>
-#define N 1000
-#define M 10
+#define N 20000
+#define M 1
 #include <time.h>
 #include <stdlib.h>
 
@@ -41,7 +41,7 @@ void main()
       end = clock();
       cpu_time_used += ((double) (end - start)) / CLOCKS_PER_SEC;
 
-    printf("Time to add rows %d times: %le\n", N, cpu_time_used);
+    printf("Time to add rows %d times: %le\n", N * M, cpu_time_used);
 
     /*  computing col sum */
     cpu_time_used = 0;
@@ -59,8 +59,7 @@ void main()
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 
-    printf("Time to add columns %d times: %le\n", N, cpu_time_used);
-
+    printf("Time to add columns %d times: %le\n", N * M, cpu_time_used);
 }
 
 /*  Function to add each row */
