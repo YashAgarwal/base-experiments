@@ -1,13 +1,14 @@
 #include <stdio.h>
-#define N 1000
-#define M 10
 #include <time.h>
 #include <stdlib.h>
+
+#define N 10000
+#define M 10
 
 // int Addrow(int array1[N][N], int k);
 // int Addcol(int array1[N][N], int k);
 
-void main()
+int main()
 {
     int arr[N][N];
     int k;
@@ -27,19 +28,19 @@ void main()
     double cpu_time_used;
 
     /*  computing row sum */
-    // cpu_time_used = 0;
-    // start = clock();
-    for (i = 0; i < N * M; i++)
+    cpu_time_used = 0;
+    start = clock();
+    for (i = 0; i < 1; i++)
     {
       rowsum = 0;
       k = (int)((double)rand() / ((double)RAND_MAX + 1) * N);
-
       for ( int l = 0; l < N; l++) {
           rowsum += arr[k][l];
-        }
+      }
+        
     }
-      // end = clock();
-      // cpu_time_used += ((double) (end - start)) / CLOCKS_PER_SEC;
+      end = clock();
+      cpu_time_used += ((double) (end - start)) / CLOCKS_PER_SEC;
 
     printf("Time to add rows %d times: %le\n", N, cpu_time_used);
 
@@ -59,6 +60,8 @@ void main()
     // cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     //
     // printf("Time to add columns %d times: %le\n", N, cpu_time_used);
+
+    return 0;
 
 }
 
